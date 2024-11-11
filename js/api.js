@@ -14,6 +14,11 @@ async function Api() {
     const data_Almaty = await respons_Almaty.json();
     const data_Barcelona = await respons_Barcelona.json();
 
+    console.log("Data for Petropavl:", data_Petropavl);
+    console.log("Data for Tucson:", data_Tucson);
+    console.log("Data for Almaty:", data_Almaty);
+    console.log("Data for Barcelona:", data_Barcelona);
+
     return [data_Petropavl, data_Tucson, data_Almaty, data_Barcelona];
 }
 
@@ -27,7 +32,7 @@ async function output() {
         Barcelona.textContent = `Air temperature: ${out[3].hourly.temperature_2m[0]} \u00B0C`;
     }
     catch(error) {
-        console.log(error);
+        console.log("Error:", error);
     }
     finally {
         setTimeout(output, 10000);
